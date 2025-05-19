@@ -1,0 +1,90 @@
+ #include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+float balance=1000;
+string name;
+int pin;
+  
+
+cout<<"Welcome  to Utkarsh bank of India"<<endl;
+while(1){
+    
+    
+    
+cout<<"............................."<<endl;
+cout<<"plz choose any option given below"<<endl;
+
+cout<<"press 1 for open bank account"<<endl;
+cout<<"press 2 for check bank balance"<<endl;
+cout<<"press 3 for withdrawal money"<<endl;
+cout<<"press 4 for deposite money"<<endl;
+cout<<"press 5 for log out"<<endl;
+cout<<"press 6 for change upi pin "<<endl;
+
+int parth;cin>>parth;
+if (parth==1){
+    cout<<"plz enter your name :"<<endl;
+    cin>>name;
+    cout<<" Your name " << name << " captured succesfully "<<endl;
+    cout<<" Thnx " << name << " for opening bank account in Utkarsh bank of sankargarh "<<endl;
+    cout<<" plz make your upi pin "<<endl;
+    cin>>pin;
+}
+else if (parth==2){
+    cout<<" plz enter your upi pin"<<endl;
+    int pin;cin>>pin;
+   cout<<" Your current balance is " << balance <<endl;
+}
+
+ else if (parth==3){
+      cout<<" plz enter your upi pin"<<endl;
+    int pin;cin>>pin;
+    
+    cout<<" Enter Money that you want to withdrawal "<<endl;
+   int w;cin>>w;
+   
+   if (balance>=w){
+       cout<<" succesfully you withdrawal your money"<<endl;
+       balance=balance-w;
+       cout<<" your current balance is " << balance <<endl;
+   }
+   else if (balance<=w){
+       cout<<" aukaat se bahar paisa mat nikalo sir "<<endl;
+   }
+   
+   }
+
+else if (parth==4){
+       cout<<" plz enter your upi pin"<<endl;
+    int temp;cin>>temp;
+    if (temp==pin){
+        cout<<" Enter Money that you want to deposite "<<endl;
+     int w;cin>>w;balance=balance+w;
+     cout<<" your account balance is " << balance << endl;
+    }
+    else {
+        cout<<" chlo nikalo glt pin mat dalo "<<endl;
+    }
+  
+}
+
+else if (parth==5){
+    cout<<" Now You are Log Out.."<<endl;
+    cout<<" Thank,s for coming in Utkarsh Bank of pandit ka purwa : See You Again "<<endl;
+}
+else if (parth==6){
+    cout<<" plz enter your current upi pin "<<endl;
+    cin>>pin;
+    cout<<" change the pin "<<endl;
+    cin>>pin;
+    break;
+}
+
+
+
+
+
+}
+return 0;
+}
