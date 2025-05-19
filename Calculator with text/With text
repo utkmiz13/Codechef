@@ -1,0 +1,20 @@
+ #include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b;
+    cout<<" Welcome To Utkarsh Calculator"<<endl;
+    cout<<" ............................."<<endl;
+    cout<<" Plz Enter First Number "<<endl;
+    cin>>a;
+    cout<<"Great First number " << a << " Is Captured Succesfully "<<endl;
+    cout<<"plz Enter Second Number"<<endl;
+    cin>>b;
+    cout<<" Great Second Number " << b << " Is Captured Succesfully "<<endl;
+    cout<<" The Sum Of " << a << " And " <<  b << "is :" <<a+b<< endl; 
+    cout<<" The Subtraction of "<< a << " And " << b << "is :" <<a-b<<endl;
+    cout<<" The Multiplication Of " << a << " And " <<"b :" <<a*b<<endl;
+    cout<<" The Divison Of " << a << " And " << b << "is :" <<a/b<<endl;
+    cout<<" The Remainder Of " << a << " And " << b << " is :" <<a%b<<endl;
+    
+    return 0;
+}
