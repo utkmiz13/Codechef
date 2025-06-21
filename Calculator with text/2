@@ -1,0 +1,282 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+// Function to display the calculator header
+void displayHeader() {
+    cout << "\n";
+    cout << "=========================================\n";
+    cout << "        UTKARSH CALCULATOR v1.0         \n";
+    cout << "=========================================\n";
+    cout << "   Welcome to your personal calculator!  \n";
+    cout << "=========================================\n\n";
+}
+
+// Function to display the main menu
+void displayMenu() {
+    cout << "\n--- CALCULATOR MENU ---\n";
+    cout << "1. Basic Operations (+, -, *, /)\n";
+    cout << "2. Advanced Operations\n";
+    cout << "3. Scientific Functions\n";
+    cout << "4. Area Calculations\n";
+    cout << "5. Exit\n";
+    cout << "Choose an option (1-5): ";
+}
+
+// Function for basic arithmetic operations
+void basicOperations() {
+    double num1, num2;
+    char operation;
+    
+    cout << "\n--- BASIC OPERATIONS ---\n";
+    cout << "Enter first number: ";
+    cin >> num1;
+    
+    cout << "Enter operation (+, -, *, /): ";
+    cin >> operation;
+    
+    cout << "Enter second number: ";
+    cin >> num2;
+    
+    cout << fixed << setprecision(2);
+    cout << "\nResult: " << num1 << " " << operation << " " << num2 << " = ";
+    
+    switch(operation) {
+        case '+':
+            cout << num1 + num2 << endl;
+            break;
+        case '-':
+            cout << num1 - num2 << endl;
+            break;
+        case '*':
+            cout << num1 * num2 << endl;
+            break;
+        case '/':
+            if(num2 != 0) {
+                cout << num1 / num2 << endl;
+            } else {
+                cout << "Error! Division by zero is not allowed." << endl;
+            }
+            break;
+        default:
+            cout << "Error! Invalid operation." << endl;
+    }
+}
+
+// Function for advanced operations
+void advancedOperations() {
+    int choice;
+    double num, base, exponent;
+    
+    cout << "\n--- ADVANCED OPERATIONS ---\n";
+    cout << "1. Square (x²)\n";
+    cout << "2. Cube (x³)\n";
+    cout << "3. Square Root (√x)\n";
+    cout << "4. Power (x^y)\n";
+    cout << "5. Percentage\n";
+    cout << "Choose operation (1-5): ";
+    cin >> choice;
+    
+    cout << fixed << setprecision(2);
+    
+    switch(choice) {
+        case 1:
+            cout << "Enter number: ";
+            cin >> num;
+            cout << "Square of " << num << " = " << pow(num, 2) << endl;
+            break;
+        case 2:
+            cout << "Enter number: ";
+            cin >> num;
+            cout << "Cube of " << num << " = " << pow(num, 3) << endl;
+            break;
+        case 3:
+            cout << "Enter number: ";
+            cin >> num;
+            if(num >= 0) {
+                cout << "Square root of " << num << " = " << sqrt(num) << endl;
+            } else {
+                cout << "Error! Cannot find square root of negative number." << endl;
+            }
+            break;
+        case 4:
+            cout << "Enter base: ";
+            cin >> base;
+            cout << "Enter exponent: ";
+            cin >> exponent;
+            cout << base << "^" << exponent << " = " << pow(base, exponent) << endl;
+            break;
+        case 5:
+            double value, percentage;
+            cout << "Enter value: ";
+            cin >> value;
+            cout << "Enter percentage: ";
+            cin >> percentage;
+            cout << percentage << "% of " << value << " = " << (value * percentage / 100) << endl;
+            break;
+        default:
+            cout << "Invalid choice!" << endl;
+    }
+}
+
+// Function for scientific calculations
+void scientificFunctions() {
+    int choice;
+    double num, degrees;
+    
+    cout << "\n--- SCIENTIFIC FUNCTIONS ---\n";
+    cout << "1. Sine (sin)\n";
+    cout << "2. Cosine (cos)\n";
+    cout << "3. Tangent (tan)\n";
+    cout << "4. Natural Logarithm (ln)\n";
+    cout << "5. Logarithm base 10 (log)\n";
+    cout << "6. Factorial\n";
+    cout << "Choose function (1-6): ";
+    cin >> choice;
+    
+    cout << fixed << setprecision(4);
+    
+    switch(choice) {
+        case 1:
+            cout << "Enter angle in degrees: ";
+            cin >> degrees;
+            cout << "sin(" << degrees << "°) = " << sin(degrees * M_PI / 180) << endl;
+            break;
+        case 2:
+            cout << "Enter angle in degrees: ";
+            cin >> degrees;
+            cout << "cos(" << degrees << "°) = " << cos(degrees * M_PI / 180) << endl;
+            break;
+        case 3:
+            cout << "Enter angle in degrees: ";
+            cin >> degrees;
+            cout << "tan(" << degrees << "°) = " << tan(degrees * M_PI / 180) << endl;
+            break;
+        case 4:
+            cout << "Enter number: ";
+            cin >> num;
+            if(num > 0) {
+                cout << "ln(" << num << ") = " << log(num) << endl;
+            } else {
+                cout << "Error! Logarithm undefined for non-positive numbers." << endl;
+            }
+            break;
+        case 5:
+            cout << "Enter number: ";
+            cin >> num;
+            if(num > 0) {
+                cout << "log(" << num << ") = " << log10(num) << endl;
+            } else {
+                cout << "Error! Logarithm undefined for non-positive numbers." << endl;
+            }
+            break;
+        case 6:
+            int n;
+            cout << "Enter a positive integer: ";
+            cin >> n;
+            if(n >= 0) {
+                long long factorial = 1;
+                for(int i = 1; i <= n; i++) {
+                    factorial *= i;
+                }
+                cout << n << "! = " << factorial << endl;
+            } else {
+                cout << "Error! Factorial undefined for negative numbers." << endl;
+            }
+            break;
+        default:
+            cout << "Invalid choice!" << endl;
+    }
+}
+
+// Function for area calculations
+void areaCalculations() {
+    int choice;
+    double length, width, radius, base, height, side;
+    
+    cout << "\n--- AREA CALCULATIONS ---\n";
+    cout << "1. Rectangle\n";
+    cout << "2. Circle\n";
+    cout << "3. Triangle\n";
+    cout << "4. Square\n";
+    cout << "Choose shape (1-4): ";
+    cin >> choice;
+    
+    cout << fixed << setprecision(2);
+    
+    switch(choice) {
+        case 1:
+            cout << "Enter length: ";
+            cin >> length;
+            cout << "Enter width: ";
+            cin >> width;
+            cout << "Area of rectangle = " << length * width << " square units" << endl;
+            break;
+        case 2:
+            cout << "Enter radius: ";
+            cin >> radius;
+            cout << "Area of circle = " << M_PI * radius * radius << " square units" << endl;
+            break;
+        case 3:
+            cout << "Enter base: ";
+            cin >> base;
+            cout << "Enter height: ";
+            cin >> height;
+            cout << "Area of triangle = " << 0.5 * base * height << " square units" << endl;
+            break;
+        case 4:
+            cout << "Enter side length: ";
+            cin >> side;
+            cout << "Area of square = " << side * side << " square units" << endl;
+            break;
+        default:
+            cout << "Invalid choice!" << endl;
+    }
+}
+
+// Main function
+int main() {
+    int choice;
+    char continueCalc;
+    
+    displayHeader();
+    
+    do {
+        displayMenu();
+        cin >> choice;
+        
+        switch(choice) {
+            case 1:
+                basicOperations();
+                break;
+            case 2:
+                advancedOperations();
+                break;
+            case 3:
+                scientificFunctions();
+                break;
+            case 4:
+                areaCalculations();
+                break;
+            case 5:
+                cout << "\nThank you for using Utkarsh Calculator! 👨‍💻\n";
+                cout << "Goodbye! 👋\n";
+                return 0;
+            default:
+                cout << "Invalid choice! Please select 1-5." << endl;
+                continue;
+        }
+        
+        cout << "\nDo you want to perform another calculation? (y/n): ";
+        cin >> continueCalc;
+        
+    } while(continueCalc == 'y' || continueCalc == 'Y');
+    
+    cout << "\nThank you for using Utkarsh Calculator! 👨‍💻\n";
+    cout << "Hope it helped you with your calculations! 🧮\n";
+    cout << "Goodbye! 👋\n";
+    
+    return 0;
+}
