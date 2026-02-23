@@ -9,8 +9,7 @@ int pin;
 
 cout<<"Welcome  to Utkarsh bank of India"<<endl;
 while(1){
-    
-    
+        
     
 cout<<"............................."<<endl;
 cout<<"plz choose any option given below"<<endl;
