@@ -10,6 +10,7 @@ C++ is a powerful, general-purpose programming language developed by Bjarne Stro
 - **Versatile**: Used in games, operating systems, databases, web browsers
 - **Foundation**: Understanding C++ makes learning other languages easier
 
+
 ## Getting Started
 
 ### Development Environment
